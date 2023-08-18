@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[sub_resource type="CylinderShape" id=6]
+resource_local_to_scene = true
+height = 0.5
+radius = 1.5
+
+[sub_resource type="CylinderMesh" id=7]
+resource_local_to_scene = true
+top_radius = 1.25
+bottom_radius = 1.25
+height = 0.55
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.619608, 0.913725, 1 )
+
+[sub_resource type="CylinderMesh" id=8]
+resource_local_to_scene = true
+top_radius = 1.5
+bottom_radius = 1.5
+height = 0.5
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+albedo_color = Color( 0, 0.0313726, 0.764706, 1 )
+
+[sub_resource type="CylinderShape" id=9]
+resource_local_to_scene = true
+height = 0.25
+radius = 1.5
+
+[node name="Platform" type="StaticBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 7 )
+material/0 = SubResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+mesh = SubResource( 8 )
+material/0 = SubResource( 5 )
+
+[node name="Buttom" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17596, 0 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Buttom"]
+shape = SubResource( 9 )

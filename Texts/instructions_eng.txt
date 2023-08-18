@@ -1,0 +1,10 @@
+The goal is to get to the 
+finish as quickly as possible
+
+Walk - WASD
+Jump - Space
+Sensitivity settings - M
+
+Hints:
+The green platform is the checkpoint.
+You can do a double jump in the air

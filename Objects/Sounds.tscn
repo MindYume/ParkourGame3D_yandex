@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sounds/Step.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/Checkpoint.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/Win.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Jump1.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Jump2.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Scripts/Sounds.cs" type="Script" id=6]
+
+[node name="Sounds" type="Node"]
+script = ExtResource( 6 )
+
+[node name="Jump1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="Jump2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+
+[node name="Checkpoint" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -5.0
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0

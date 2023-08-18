@@ -1,0 +1,33 @@
+Fonts
+
+"Open Sans" font by Steve Matteson
+Copyright (c) 2020
+Licensed under the SIL Open Font License, Version 1.1.
+
+
+Sounds
+
+Sound: fast simple chop 1
+Author: dave.des
+Source: Freesound
+License: CC0
+
+Sound: fast simple chop 5
+Author: dave.des
+Source: Freesound
+License: CC0
+
+Sound: Footstep on Stone
+Author: Samulis
+Source: Freesound
+License: CC0
+
+Sound: success_bell
+Author: MLaudio
+Source: Freesound
+License: CC0
+
+Sound: success 1
+Author: Leszek_Szary
+Source: Freesound
+License: CC0

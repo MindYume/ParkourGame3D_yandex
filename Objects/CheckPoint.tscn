@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/CheckPoint.cs" type="Script" id=2]
+
+[sub_resource type="CylinderShape" id=16]
+height = 0.5
+radius = 1.5
+
+[sub_resource type="CylinderMesh" id=13]
+top_radius = 1.25
+bottom_radius = 1.25
+height = 0.55
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.12549, 0.898039, 0.0156863, 1 )
+
+[sub_resource type="CylinderMesh" id=14]
+top_radius = 1.5
+bottom_radius = 1.5
+height = 0.5
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.0941176, 0.545098, 0, 1 )
+
+[sub_resource type="CylinderShape" id=15]
+height = 0.5
+radius = 1.45
+
+[node name="CheckPoint" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Platform" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform"]
+shape = SubResource( 16 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Platform"]
+mesh = SubResource( 13 )
+material/0 = SubResource( 11 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Platform"]
+mesh = SubResource( 14 )
+material/0 = SubResource( 12 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 0.976163, 0, 0, 0, 1, 0, 0, 0, 0.976163, 0, 0.0771521, 0 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 15 )
+
+[node name="RespawnPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14699, 0 )

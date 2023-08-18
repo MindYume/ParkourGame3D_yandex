@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/CheckPoint.cs" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 5, 0.25, 5 )
+
+[sub_resource type="CubeMesh" id=19]
+size = Vector3( 9, 0.51, 9 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.12549, 0.898039, 0.0156863, 1 )
+
+[sub_resource type="CubeMesh" id=20]
+size = Vector3( 10, 0.5, 10 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.0941176, 0.545098, 0, 1 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 5, 0.25, 5 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 5, 1, 5 )
+
+[node name="Spawn" type="Spatial"]
+
+[node name="CheckPoint" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="Platform" type="StaticBody" parent="CheckPoint"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CheckPoint/Platform"]
+shape = SubResource( 18 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CheckPoint/Platform"]
+mesh = SubResource( 19 )
+material/0 = SubResource( 11 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="CheckPoint/Platform"]
+mesh = SubResource( 20 )
+material/0 = SubResource( 12 )
+
+[node name="PlaformDerectArea" type="Area" parent="CheckPoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="CheckPoint/PlaformDerectArea"]
+shape = SubResource( 21 )
+
+[node name="StartDetectArea" type="Area" parent="CheckPoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0 )
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="CheckPoint/StartDetectArea"]
+shape = SubResource( 22 )
+
+[node name="RespawnPosition" type="Position3D" parent="CheckPoint"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44617, 0 )

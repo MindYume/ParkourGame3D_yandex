@@ -1,0 +1,7 @@
+You Win!
+
+Time: {0}
+Best time: {1}
+
+Stand on the green platform
+if you want to try again
