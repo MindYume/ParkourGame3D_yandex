@@ -27,7 +27,7 @@ public class Player : KinematicBody
 	[Signal] public delegate void jumps_amount_changed(int jumpsAmount);
 
 	private JavaScriptObject _loadPlayerDataCallback;
-	private JavaScriptObject javascriptWidnow;
+	//private JavaScriptObject javascriptWidnow;
 
 	private int JumpsAmount
 	{
@@ -71,7 +71,7 @@ public class Player : KinematicBody
 		dataString += $"{_timer.Time} ";
 		dataString += $"{_timer.IsTimerStarted}";
 
-		javascriptWidnow.Call("localStorageSetItem", "player_data", dataString);
+		//javascriptWidnow.Call("localStorageSetItem", "player_data", dataString);
 	}
 
 	public override void _Ready()
@@ -85,14 +85,14 @@ public class Player : KinematicBody
 		
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 
-		if (OS.GetName() == "HTML5")
+		/* if (OS.GetName() == "HTML5")
 		{
 			_area.Monitoring = false;
 
 			_loadPlayerDataCallback = JavaScript.CreateCallback(this, nameof(loadPlayerData));
 			javascriptWidnow = JavaScript.GetInterface("window");
 			javascriptWidnow.Call("localStorageGetItem", "player_data", _loadPlayerDataCallback);
-		}
+		} */
 
 	}
 	
@@ -108,11 +108,11 @@ public class Player : KinematicBody
 		}
 		
 		_lastSaveTime += delta;
-		if (OS.GetName() == "HTML5" && _lastSaveTime > 1 && IsOnFloor())
+		/* if (OS.GetName() == "HTML5" && _lastSaveTime > 1 && IsOnFloor())
 		{
 			_lastSaveTime = 0;
 			savePlayerData();
-		}
+		} */
 
 		// Remove on release
 		if(Input.IsKeyPressed(((int)KeyList.R)))
@@ -215,6 +215,7 @@ public class Player : KinematicBody
 				{
 					sounds.jump2.Play();
 				}
+
 			}
 		}
 	}
@@ -235,10 +236,10 @@ public class Player : KinematicBody
 
 		_respawnPosition = checkpoint.RespawnPosition;
 
-		if (OS.GetName() == "HTML5")
+		/* if (OS.GetName() == "HTML5")
 		{
 			_lastSaveTime = 0;
-		}
+		} */
 	}
 
 	public void _on_Timer_loaded(Timer timer)

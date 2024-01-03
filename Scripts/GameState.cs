@@ -18,11 +18,11 @@ public class GameState : Node
 
     public override void _Ready()
     {
-        if (OS.GetName() == "HTML5")
+        /* if (OS.GetName() == "HTML5")
         {
             GDScript MyGDScript = (GDScript)GD.Load("res://Scripts/YandexGamesAPI.gd");
             lang = MyGDScript.Call("get_language").ToString();
-        }
+        } */
     }
 
     public override void _Process(float delta)
@@ -50,11 +50,11 @@ public class GameState : Node
         if (language_last_check_time > 1)
         {
             language_last_check_time = 0;
-            if (OS.GetName() == "HTML5")
+            /* if (OS.GetName() == "HTML5")
             {
                 GDScript MyGDScript = (GDScript)GD.Load("res://Scripts/YandexGamesAPI.gd");
                 lang = MyGDScript.Call("get_language").ToString();
-            }
+            } */
         }
     }
 

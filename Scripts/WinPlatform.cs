@@ -53,11 +53,11 @@ public class WinPlatform : Spatial
         player.Translation = new Vector3(0, 2, 0);
         player.RotationDegrees = new Vector3(0, -45, 0);
 
-        if (OS.GetName() == "HTML5")
+        /* if (OS.GetName() == "HTML5")
 		{
             Input.MouseMode = Input.MouseModeEnum.Visible;
             GDScript MyGDScript = (GDScript)GD.Load("res://Scripts/YandexGamesAPI.gd");
             MyGDScript.Call("show_ad");
-        }
+        } */
     }
 }
